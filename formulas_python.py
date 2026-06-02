@@ -1,14 +1,5 @@
-"""
-Conversión de fórmulas de Excel a Python
-Archivo: Desarrollo.xlsx
-"""
-
-
-
-
 class CalculosTuneles:
-    """Clase que contiene todas las fórmulas convertidas del Excel"""
-    
+        
     def __init__(self):
         self.L = 2200  # [m]
         self.At = 91  # [m2]
@@ -25,8 +16,7 @@ class CalculosTuneles:
         self.nt2 = 3  # [und] - número de turbinas tipo 2
 
     def calcular_sheet1(self):
-        """Calcula todos los valores de la hoja actual del Excel"""
-        
+                
         # Valores intermedios
         P0 = 1.01325 * 10**5
         Vv1 = 60 * 10 / 36
@@ -36,7 +26,7 @@ class CalculosTuneles:
         rho = self.rho_0 * (1 - 6.883 * 10**-6 * self.h) ** 4.256
         P = P0 * (1 - 6.883 * 10**-6 * self.h) ** 5.256
         
-        # Resultados finales (celdas D18, D21, D24, D27, D29, D30)
+        # Resultados finales 
         Pi0 = 0.75 * rho * self.V**2
         Pdrag2 = (
             self.Cd2 * 0.5 * (self.Av2 / self.At) * rho *
@@ -74,8 +64,7 @@ class CalculosTuneles:
 
 
 def main():
-    """Función principal para ejecutar los cálculos"""
-    
+        
     print("=" * 80)
     print("CONVERSIÓN DE FÓRMULAS EXCEL A PYTHON - PROYECTO TÚNELES")
     print("=" * 80)
